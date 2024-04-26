@@ -1,4 +1,4 @@
-# VisionRefine: High-Resolution Image Recover
+# VisionRefine: High-Resolution Image Recovery
 
 The course project of EECS442
 
