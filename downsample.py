@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-def resize_images(folder_path, output_folder=None, size=(512, 512)):
+def resize_images(folder_path, output_folder=None, size=(256, 256)):
     """
     Resize all PNG images in the specified folder to the given size.
 
@@ -33,5 +33,5 @@ def resize_images(folder_path, output_folder=None, size=(512, 512)):
             print(f'Resized and saved: {save_path}')
 
 source_folder = 'DIV2K_train_HR/'
-output_folder = 'DIV2K_train_512/'
+output_folder = 'DIV2K_train_256/'
 resize_images(source_folder, output_folder)
