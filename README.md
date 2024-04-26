@@ -1,5 +1,9 @@
 # VisionRefine: High-Resolution Image Recover
+
 The course project of EECS442
+
+Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
+
 ## Roadmap
 - [ ] Super resolution with CNN.
 - [x] Super resolution (x4) with pre-trained diffusion model w/ classifier conditioning.
