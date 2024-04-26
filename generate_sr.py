@@ -133,7 +133,7 @@ def generate_image_grid(
 
 def main():
     for step in [100, 1000]:
-        generate_image_grid(f'pretrained-div2k/00000--uncond-ddpmpp-edm-gpus3-batch15-fp32/network-snapshot-000501.pkl', f'results-{step}.png', num_steps=step, eta_in=40.)
+        generate_image_grid(f'div2k_edm.pkl', f'results-{step}.png', num_steps=step, eta_in=40.)
 
 #----------------------------------------------------------------------------
 
