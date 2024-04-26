@@ -1,4 +1,4 @@
-# EECS442SR
+# VisionRefine: High-Resolution Image Recover
 The course project of EECS442
 ## Roadmap
 - [ ] Super resolution with CNN.
