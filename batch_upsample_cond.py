@@ -74,7 +74,13 @@ def main():
     while len(all_images) * args.batch_size < args.num_samples:
         model_kwargs = next(data)
         model_kwargs = {k: v.to(dist_util.dev()) for k, v in model_kwargs.items()}
-        sample = diffusion.p_sample_loop(
+        if args.ddim:
+            print('Enabling DDIM')
+            sample_fn = diffusion.ddim_sample_loop
+        else:
+            sample_fn = diffusion.p_sample_loop
+
+        sample = sample_fn(
             model_fn,
             (args.batch_size, 3, args.large_size, args.large_size),
             clip_denoised=args.clip_denoised,
@@ -142,6 +148,8 @@ def create_argparser():
         model_path="",
         classifier_path="",
         classifier_scale=1.0,
+
+        ddim=False,
     )
     defaults.update(sr_model_and_diffusion_defaults())
     defaults.update(classifier_defaults())
