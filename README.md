@@ -6,8 +6,8 @@ Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
 
 ## Roadmap
 - [ ] Super resolution with CNN.
-- [x] Super resolution (x4) with pre-trained diffusion model w/ classifier conditioning.
-- [ ] Super resolution with codeformer.
+- [x] Super resolution (x4) with pre-trained diffusion (or our own pre-trained model) model w/ classifier conditioning.
+- [x] Super resolution with transformer.
 
 ## Diffusion Model
 
@@ -18,8 +18,13 @@ Our pre-trained model is derived from [OpenAI](https://github.com/openai/guided-
 Run the sampling algorithm:
 
 ```python
-python batch_upsample_cond.py
+python batch_upsample_cond.py --model_path models/64_256_upsampler.pt --base_samples ./images/all_low_res.npz \
+  --attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --large_size 256  --small_size 64 --learn_sigma True \
+  --noise_schedule linear --num_channels 192 --num_heads 4 --num_res_blocks 2 --resblock_updown True --use_fp16 True --use_scale_shift_norm True \
+  --batch_size 2 --num_samples 2 --timestep_respacing 250  --classifier_scale 4.0 --classifier_path models/256x256_classifier.pt --image_size 256
 ```
+
+We assume you have all the 64x64 low resolution images under `./image` folder and the pre-trained model and classifier under `./models` folder.
 
 ### EDM Based DPS
 
@@ -29,5 +34,15 @@ Run the sampling algorithm:
 
 ```python
 python generate_sr.py
+```
+
+## Transformer
+
+Please switch to the branch ``xuejunzh`` for Transformer.
+
+Run the program:
+
+```python
+
 ```
 
