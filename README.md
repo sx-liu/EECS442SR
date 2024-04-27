@@ -6,8 +6,8 @@ Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
 
 ## Roadmap
 - [ ] Super resolution with CNN.
-- [x] Super resolution (x4) with pre-trained diffusion model w/ classifier conditioning.
-- [ ] Super resolution with codeformer.
+- [x] Super resolution (x4) with pre-trained diffusion (or our own pre-trained model) model w/ classifier conditioning.
+- [x] Super resolution with transformer.
 
 ## Diffusion Model
 
@@ -34,5 +34,15 @@ Run the sampling algorithm:
 
 ```python
 python generate_sr.py
+```
+
+## Transformer
+
+Please switch to the branch ``xuejunzh`` for Transformer.
+
+Run the program:
+
+```python
+
 ```
 
