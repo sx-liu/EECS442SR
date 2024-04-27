@@ -22,7 +22,7 @@ import scipy
 import scipy.ndimage
 import argparse
 from basicsr.utils.download_util import load_file_from_url
-
+from PIL import Image
 try:
     import dlib
 except ImportError:
@@ -51,6 +51,7 @@ def get_landmark(filepath, only_keep_largest=True):
         face_areas = []
         for k, d in enumerate(dets):
             face_area = (d.right() - d.left()) * (d.bottom() - d.top())
+            print("face ares:", face_area)
             face_areas.append(face_area)
 
         largest_idx = face_areas.index(max(face_areas))

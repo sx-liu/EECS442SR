@@ -162,7 +162,7 @@ class FaceRestoreHelper(object):
         return face_detector, shape_predictor_5
 
     def get_face_landmarks_5_dlib(self,
-                                only_keep_largest=False,
+                                only_keep_largest=True,
                                 scale=1):
         det_faces = self.face_detector(self.input_img, scale)
 
@@ -233,12 +233,16 @@ class FaceRestoreHelper(object):
                 landmark = np.array([[bbox[i], bbox[i + 1]] for i in range(5, 15, 2)])
             self.all_landmarks_5.append(landmark)
             self.det_faces.append(bbox[0:5])
-            
+        h, w, _ = self.input_img.shape
+        print("h: ",h, " ", "w: ", w)
+        print("det_faces:", self.det_faces)
+        #breakpoint() 
         if len(self.det_faces) == 0:
             return 0
         if only_keep_largest:
             h, w, _ = self.input_img.shape
             self.det_faces, largest_idx = get_largest_face(self.det_faces, h, w)
+            
             self.all_landmarks_5 = [self.all_landmarks_5[largest_idx]]
         elif only_center_face:
             h, w, _ = self.input_img.shape

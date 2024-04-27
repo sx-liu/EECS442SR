@@ -176,7 +176,7 @@ if __name__ == '__main__':
             img_name = f'{video_name}_{basename}' if input_video else basename
             print(f'[{i+1}/{test_img_num}] Processing: {img_name}')
             img = img_path
-
+        #breakpoint()
         if args.has_aligned: 
             # the input faces are already cropped and aligned
             img = cv2.resize(img, (512, 512), interpolation=cv2.INTER_LINEAR)
