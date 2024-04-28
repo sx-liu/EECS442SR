@@ -38,7 +38,7 @@ python generate_sr.py
 
 ## Transformer
 
-Please switch to the branch ``xuejunzh`` for Transformer. This modelis based on codeFormer
+Please switch to the branch ``codeformer`` for Transformer. This modelis based on codeFormer
 
 Run the program:
 ```python
