@@ -12,8 +12,11 @@ Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
 ## SRCNN
 
 ```bash
-$ python3 my.py --train-file "data/91-image_x3.h5" \
-                --eval-file "data/Set5_x3.h5" \
+$ mkdir data
+$ wget https://www.dropbox.com/s/22afykv4amfxeio/91-image_x4.h5?dl=0 -O data/91-image_x4.h5
+$ wget https://www.dropbox.com/s/0rz86yn3nnrodlb/Set5_x4.h5?dl=0 -O data/Set5_x4.h5
+$ python3 my.py --train-file "data/91-image_x4.h5" \
+                --eval-file "data/Set5_x4.h5" \
                 --outputs-dir "outputs-500" \
                 --scale 4 \
                 --lr 1e-4 \
