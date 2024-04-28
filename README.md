@@ -42,7 +42,7 @@ Please switch to the branch ``xuejunzh`` for Transformer. This modelis based on 
 
 Run the program:
 ```python
-python inference_codeformer.py -w 0.7 --input_path /nfs/turbo/coe-chaijy/xuejunzh/CodeFormer/inputs/whole_imgs --output_path outputs --face_upsample
+python inference_codeformer.py -w 0.7 --input_path inputs/whole_imgs --output_path outputs --face_upsample
 python bounding_box.py
 python final_output.py
 ```
