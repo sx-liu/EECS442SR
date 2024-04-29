@@ -38,8 +38,13 @@ python generate_sr.py
 
 ## Transformer
 
-Please switch to the branch ``codeformer`` for Transformer. This model is based on CodeFormer
-
+Please switch to the branch ``codeformer`` for Transformer. This model is based on CodeFormer.
+Download the pretrained models:
+```python
+python scripts/download_pretrained_models.py facelib
+python scripts/download_pretrained_models.py dlib
+python scripts/download_pretrained_models.py CodeFormer
+```
 Run the program:
 ```python
 python inference_codeformer.py -w 0.7 --input_path inputs/whole_imgs --output_path outputs --face_upsample
