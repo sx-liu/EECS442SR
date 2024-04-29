@@ -34,6 +34,8 @@ best epoch: 499, psnr: 32.77
 
 ## Diffusion Model
 
+Please stay in the branch ``main`` for our enhanced diffusion models.
+
 ###  Classifier Guided DDPM Sampling
 
 Our pre-trained model is derived from [OpenAI](https://github.com/openai/guided-diffusion) and uses the 64x64 -> 256x256 upsampler. You may directly download it [here](https://openaipublic.blob.core.windows.net/diffusion/jul-2021/64_256_upsampler.pt).
