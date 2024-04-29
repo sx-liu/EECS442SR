@@ -11,6 +11,10 @@ Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
 
 ## SRCNN
 
+Please switch to the branch ``SRCNN`` for our enhanced SRCNN model.
+
+Run the program:
+
 ```bash
 $ mkdir data
 $ wget https://www.dropbox.com/s/22afykv4amfxeio/91-image_x4.h5?dl=0 -O data/91-image_x4.h5
@@ -29,6 +33,8 @@ best epoch: 499, psnr: 32.77
 ```
 
 ## Diffusion Model
+
+Please stay in the branch ``main`` for our enhanced diffusion models.
 
 ###  Classifier Guided DDPM Sampling
 
@@ -57,11 +63,17 @@ python generate_sr.py
 
 ## Transformer
 
-Please switch to the branch ``xuejunzh`` for Transformer.
+Please switch to the branch ``codeformer`` for Transformer. This model is based on CodeFormer.
 
-Run the program:
-
+Download the pretrained models:
 ```python
-
+python scripts/download_pretrained_models.py facelib
+python scripts/download_pretrained_models.py dlib
+python scripts/download_pretrained_models.py CodeFormer
 ```
-
+Run the program:
+```python
+python inference_codeformer.py -w 0.7 --input_path inputs/whole_imgs --output_path outputs --face_upsample
+python bounding_box.py
+python final_output.py
+```
