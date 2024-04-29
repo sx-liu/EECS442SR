@@ -5,9 +5,32 @@ The course project of EECS442
 Jiahe Huang, Shixuan Liu, Xuejun Zhang, Jingjing Zhu, Shuangyu Lei
 
 ## Roadmap
-- [ ] Super resolution with CNN.
+- [x] Super resolution with CNN.
 - [x] Super resolution (x4) with pre-trained diffusion (or our own pre-trained model) model w/ classifier conditioning.
 - [x] Super resolution with transformer.
+
+## SRCNN
+
+Please switch to the branch ``SRCNN`` for our enhanced SRCNN model.
+
+Run the program:
+
+```bash
+$ mkdir data
+$ wget https://www.dropbox.com/s/22afykv4amfxeio/91-image_x4.h5?dl=0 -O data/91-image_x4.h5
+$ wget https://www.dropbox.com/s/0rz86yn3nnrodlb/Set5_x4.h5?dl=0 -O data/Set5_x4.h5
+$ python3 my.py --train-file "data/91-image_x4.h5" \
+                --eval-file "data/Set5_x4.h5" \
+                --outputs-dir "outputs-500" \
+                --scale 4 \
+                --lr 1e-4 \
+                --batch-size 1024 \
+                --num-epochs 500 \
+                --num-workers 8 \
+                --seed 123
+...
+best epoch: 499, psnr: 32.77
+```
 
 ## Diffusion Model
 
