@@ -39,6 +39,7 @@ python generate_sr.py
 ## Transformer
 
 Please switch to the branch ``codeformer`` for Transformer. This model is based on CodeFormer.
+
 Download the pretrained models:
 ```python
 python scripts/download_pretrained_models.py facelib
